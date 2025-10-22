@@ -1,0 +1,7 @@
+###
+GET http://127.0.0.1:8000/api/goods_list
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/api/shops_list
+Accept: application/json

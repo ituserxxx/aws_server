@@ -1,26 +1,33 @@
+前端 dist 目录改为 web
+
 启动服务：uvicorn main:app  
 启动服务：uvicorn main:app --reload
+
+一些依赖
+```shell
 
 
 pip install requests --index-url https://mirrors.cloud.tencent.com/pypi/simple/
 pip install bs4 --index-url https://mirrors.cloud.tencent.com/pypi/simple/
-
-
 pip install lxml --index-url https://mirrors.cloud.tencent.com/pypi/simple/
 pip install selenium --index-url https://mirrors.cloud.tencent.com/pypi/simple/
-
 pip install fastapi --index-url https://mirrors.cloud.tencent.com/pypi/simple/
-
 pip install "uvicorn[standard]" --index-url https://mirrors.cloud.tencent.com/pypi/simple/
 pip install sqlalchemy pymysql --index-url https://mirrors.cloud.tencent.com/pypi/simple/
 pip install  schedule --index-url https://mirrors.cloud.tencent.com/pypi/simple/
 pip install  dotenv  --index-url https://mirrors.cloud.tencent.com/pypi/simple/
 pip install fake-useragent --index-url https://mirrors.cloud.tencent.com/pypi/simple/
+```
 
+打包依赖
 
+```shell
 pip freeze > requirements.txt
 pip install -r requirements.txt
 
+```
+linux 安装  chromedriver
+```shell
 
 sudo apt update
 sudo apt --fix-broken install
@@ -36,6 +43,7 @@ which chromedriver
 sudo chmod +x /usr/bin/chromedriver
 
 
+```
 
 
 # try  two method

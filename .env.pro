@@ -1,0 +1,5 @@
+mysql_conn="mysql+pymysql://root:root@localhost/aws_shop"
+chromedriver_path="chromedriver-win64/chromedriver.exe"
+is_headless="no"
+schedule_once="yes"
+is_pro="no"

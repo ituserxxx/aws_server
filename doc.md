@@ -40,4 +40,36 @@ sudo chmod +x /usr/bin/chromedriver
 
 # try  two method
 chromedriver 下载地址
-https://googlechromelabs.github.io/chrome-for-testing/ 
+https://googlechromelabs.github.io/chrome-for-testing/
+
+
+
+nginx config
+
+
+```nginx
+server {
+		listen 80;
+		#填写证书绑定的域名
+		server_name www.xxx.com;
+	
+#	access_log  logs/host.access.log  main;
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+
+ location / {
+        root /xxx/aws_server/web;  # Vue 应用的构建目录路径
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api {  # 假设你的 FastAPI 路由以 /api 开头
+        proxy_pass http://127.0.0.1:8000;  # FastAPI 运行的端口和地址
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+
+```
